@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { conectarMongoDB } from '../../middlewares/conectarMongoDB';
-import type { RespostaPadraoMsg } from '../../types/RespostaPadraoMsg';
+import type { RespostaPadraoMsg } from '../../types/respostapadraomsg';
 
-const endpointLogin = (
+const endpointLogin = async (
     req: NextApiRequest,
     res: NextApiResponse<RespostaPadraoMsg>
 ) => {
@@ -11,11 +11,11 @@ const endpointLogin = (
 
         if (login === 'admin@admin.com' &&
             senha === 'Admin@123') {
-            return res.status(200).json({ mensagem: 'Usuario autenticado com sucesso' })
+            return res.status(200).json({ msg: 'Usuario auntenticado com sucesso' })
         }
         return res.status(400).json({ erro: 'Usuario ou senha invalidos' });
     }
-    return res.status(405).json({ erro: 'Metodo informado não e valido' });
+    return res.status(405).json({ erro: 'Metodo informado nao e valido' });
 }
 
-export default conectarMongoDB(endpointLogin);
+export default conectarMongoDB(endpointLogin);  
