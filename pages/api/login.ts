@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { conectarMongoDB } from '../../middlewares/conectarMongoDB';
-import type { RespostaPadraoMsg } from '../../types/respostapadraomsg';
+import type { RespostaPadraoMsg } from '../../types/RespostaPadraoMsg';
 
 const endpointLogin = async (
     req: NextApiRequest,
